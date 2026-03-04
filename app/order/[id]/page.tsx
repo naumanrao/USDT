@@ -99,7 +99,7 @@ export default async function OrderPage({ params }: { params: Promise<{ id: stri
                         {/* Amount */}
                         <div className="flex items-center justify-between py-3 border-b border-gray-100 dark:border-zinc-700/50">
                             <span className="text-sm text-gray-500 dark:text-gray-400">Amount</span>
-                            <span className="text-lg font-bold text-gray-900 dark:text-white">{order.amount} USDT</span>
+                            <span className="text-lg font-bold text-gray-900 dark:text-white">{order.amount.toString()} USDT</span>
                         </div>
 
                         {/* Network */}

@@ -9,10 +9,23 @@ datasource db {
 
 model Order {
   id            String   @id @default(uuid())
-  amount        Float
+  amount        Decimal  @db.Decimal(18, 6)
   network       String
   email         String
   walletAddress String
   status        String   @default("PENDING")
   createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt @default(now())
+
+  @@index([email])
+  @@index([walletAddress])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model AdminUser {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
 }
